@@ -2,7 +2,7 @@
 
 # The production environment is meant for finished, "live" apps.
 # Code is not reloaded between requests
-config.cache_classes = true
+config.cache_classes = (File.basename($0) == "rake" && ARGV.include?("db:migrate")) ? false : true
 
 # Enable threaded mode
 # config.threadsafe!
